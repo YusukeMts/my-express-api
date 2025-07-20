@@ -106,9 +106,9 @@ function App(){
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} required />
           </label>
         </div>
-        <buttom type="submit" style={{ marginTop: '15px', padding: '10px 20px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+        <button type="submit" style={{ marginTop: '15px', padding: '10px 20px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
           商品を追加
-        </buttom>
+        </button>
 
 
       </form>
@@ -118,7 +118,7 @@ function App(){
         {products.map((product)=>(
           <li key={product.id} style={{ border: '1px solid #eee', padding: '10px', marginBottom: '10px', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
             <h3>{product.name}</h3>
-            <p>価格：{product.price.toLocalString()}円</p>
+            <p>価格：{product.price.toLocaleString()}円</p>
             <p>カテゴリ：{product.category}</p>
 
           </li>
@@ -133,3 +133,5 @@ function App(){
 
 
 }
+
+export default App;
