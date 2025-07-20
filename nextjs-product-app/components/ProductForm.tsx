@@ -6,7 +6,7 @@ interface ProductFormProps {
   onProductAdded: () => void;
 }
 
-export default function ProductForm({ onProductAdded }: ProductFormProps) {
+const ProductForm = ({ onProductAdded }: ProductFormProps) => {
   const [formData, setFormData] = useState<NewProduct>({
     name: '',
     price: 0,
@@ -122,4 +122,6 @@ export default function ProductForm({ onProductAdded }: ProductFormProps) {
       </form>
     </div>
   );
-}
+};
+
+export default ProductForm;

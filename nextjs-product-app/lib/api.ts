@@ -3,7 +3,7 @@ import { Product, NewProduct } from './types';
 const API_BASE_URL = 'http://localhost:3000';
 
 // 全商品を取得する関数
-export async function fetchProducts(): Promise<Product[]> {
+export const fetchProducts = async (): Promise<Product[]> => {
   try {
     const response = await fetch(`${API_BASE_URL}/products`, {
       cache: 'no-store', // SSRで常に最新データを取得
@@ -18,10 +18,10 @@ export async function fetchProducts(): Promise<Product[]> {
     console.error('商品の取得中にエラーが発生しました:', error);
     throw error;
   }
-}
+};
 
 // IDで特定の商品を取得する関数
-export async function fetchProductById(id: number): Promise<Product> {
+export const fetchProductById = async (id: number): Promise<Product> => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/${id}`, {
       cache: 'no-store',
@@ -39,10 +39,10 @@ export async function fetchProductById(id: number): Promise<Product> {
     console.error(`商品ID ${id} の取得中にエラーが発生しました:`, error);
     throw error;
   }
-}
+};
 
 // 新しい商品を作成する関数（クライアントサイドで使用）
-export async function createProduct(newProduct: NewProduct): Promise<Product> {
+export const createProduct = async (newProduct: NewProduct): Promise<Product> => {
   try {
     const response = await fetch(`${API_BASE_URL}/products`, {
       method: 'POST',
@@ -61,4 +61,4 @@ export async function createProduct(newProduct: NewProduct): Promise<Product> {
     console.error('商品の作成中にエラーが発生しました:', error);
     throw error;
   }
-}
+};

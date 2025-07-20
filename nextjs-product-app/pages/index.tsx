@@ -9,7 +9,7 @@ interface HomeProps {
   initialProducts: Product[];
 }
 
-export default function Home({ initialProducts }: HomeProps) {
+const Home = ({ initialProducts }: HomeProps) => {
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -86,10 +86,12 @@ export default function Home({ initialProducts }: HomeProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
 
 // getServerSideProps: サーバーサイドでデータを取得
-export const getServerSideProps: GetServerSideProps<HomeProps> = async (context) => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
     console.log('🚀 getServerSideProps: サーバーサイドでAPIを呼び出し中...');
     

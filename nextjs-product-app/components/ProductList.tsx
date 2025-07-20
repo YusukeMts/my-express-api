@@ -4,7 +4,7 @@ interface ProductListProps {
   products: Product[];
 }
 
-export default function ProductList({ products }: ProductListProps) {
+const ProductList = ({ products }: ProductListProps) => {
   if (products.length === 0) {
     return (
       <div className="text-center text-gray-500 py-8">
@@ -33,4 +33,6 @@ export default function ProductList({ products }: ProductListProps) {
       ))}
     </div>
   );
-}
+};
+
+export default ProductList;
