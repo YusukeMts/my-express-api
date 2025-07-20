@@ -35,9 +35,23 @@ function App(){
 
       </form>
 
+      {/* 商品表示リスト */}
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {products.map((product)=>(
+          <li key={product.id} style={{ border: '1px solid #eee', padding: '10px', marginBottom: '10px', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
+            <h3>{product.name}</h3>
+            <p>価格：{product.price.toLocalString()}円</p>
+            <p>カテゴリ：{product.category}</p>
+
+          </li>
+
+        ))}
+      
+      </ul>
+
     </div>
 
-  )
+  );
 
 
 }
