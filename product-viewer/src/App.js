@@ -3,6 +3,44 @@ import React,{useEffect, useState} from 'react';
 import './App.css';
 
 function App(){
+  //状態変数を使いAPIから取得した商品を管理
+  const [products, setProducts] =useState([]);
+  const [loading, setLoading] =useState(true);
+  const [error, setError] = useState(null);
+
+  //入力フォームの状態
+  const [newName, setNewName] = useState('');
+  const [newPrice, setNewPrice] = useState('');
+  const [newCategory, setNewCategory] = useState('');
+
+  // コンポーネントが初回マウントされた時にのみAPIからデータを取得する
+  useEffect(()=>{
+    const fetchProducts = async () => { //APIから時間かかるので非同期
+      try {
+        //APIエンドポイント
+        const response = await fetch('http://localhost:3000/products');
+        if (!response.ok){
+          throw new Error (`HTTP error! status: ${response.status}`);
+        }
+        // JSON形式でレスポンスを解析
+        const data = await response.json(); // APIからの返事の中身を、JavaScriptで扱いやすい形（JSONという形式）に変換します。
+        setProducts(data);
+      } catch(error){
+        console.error("商品の取得中にエラーが発生しました:", error); // 開発者向けの画面（ブラウザの「検証ツール」など）に、「商品を取りに行く途中でエラーが出たよ」と詳しくメモします。
+        setError('商品の読み込みに失敗しました。'); // ユーザーが見る画面には、「商品がうまく表示されませんでした」という優しいエラーメッセージを設定します
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+
+  },[]);// ここが空っぽの「[]」だと、「このお仕事は、画面が最初に表示された時に一度だけやってね」という意味になります。
+
+  //新しい商品を追加する関数
+
+
+
 
   return(
     <div className="App">
