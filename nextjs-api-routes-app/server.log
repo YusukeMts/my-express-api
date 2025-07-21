@@ -1,0 +1,58 @@
+
+> nextjs-api-routes-app@0.1.0 dev
+> next dev --port 3003
+
+ ⚠ Warning: Found multiple lockfiles. Selecting /Users/yusukematsui/Desktop/MyProject/my-express-api/package-lock.json.
+   Consider removing the lockfiles at:
+   * /Users/yusukematsui/Desktop/MyProject/my-express-api/nextjs-api-routes-app/package-lock.json
+
+   ▲ Next.js 15.4.2
+   - Local:        http://localhost:3003
+   - Network:      http://10.49.180.170:3003
+
+ ✓ Starting...
+ ✓ Ready in 1702ms
+ ○ Compiling /api/products ...
+ ✓ Compiled /api/products in 887ms (287 modules)
+🔍 GET /api/products リクエストを受信しました
+🔍 全商品を取得中...
+📖 JSONファイルから4件の商品を読み込みました
+✅ 4件の商品を返却します
+ GET /api/products 200 in 1079ms
+➕ POST /api/products リクエストを受信しました
+📝 リクエストデータ: { name: 'テスト商品', price: 1000, category: 'テスト' }
+➕ 新商品を作成中... { name: 'テスト商品', price: 1000, category: 'テスト' }
+📖 JSONファイルから4件の商品を読み込みました
+💾 JSONファイルに5件の商品を保存しました
+✅ 新商品を作成しました: テスト商品 (ID: 5)
+✅ 新商品を作成しました: テスト商品 (ID: 5)
+ POST /api/products 201 in 15ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1011ms (567 modules)
+🏠 メインページをサーバーサイドでレンダリング中...
+🔍 全商品を取得中...
+📖 JSONファイルから5件の商品を読み込みました
+📋 ProductList: 5件の商品を表示中
+ GET / 200 in 1359ms
+ ✓ Compiled /favicon.ico in 173ms (350 modules)
+ GET /favicon.ico 200 in 267ms
+ ✓ Compiled /api/products in 96ms (354 modules)
+➕ POST /api/products リクエストを受信しました
+📝 リクエストデータ: { name: 'MACMAC', price: 1000000, category: 'pcだよ' }
+➕ 新商品を作成中... { name: 'MACMAC', price: 1000000, category: 'pcだよ' }
+📖 JSONファイルから5件の商品を読み込みました
+💾 JSONファイルに6件の商品を保存しました
+✅ 新商品を作成しました: MACMAC (ID: 6)
+✅ 新商品を作成しました: MACMAC (ID: 6)
+ POST /api/products 201 in 155ms
+ ✓ Compiled in 112ms (234 modules)
+🏠 メインページをサーバーサイドでレンダリング中...
+🔍 全商品を取得中...
+📖 JSONファイルから6件の商品を読み込みました
+📋 ProductList: 6件の商品を表示中
+ GET / 200 in 113ms
+🏠 メインページをサーバーサイドでレンダリング中...
+🔍 全商品を取得中...
+📖 JSONファイルから6件の商品を読み込みました
+📋 ProductList: 6件の商品を表示中
+ GET / 200 in 30ms

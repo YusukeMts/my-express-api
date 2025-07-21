@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "ノートPC",
+    "price": 80000,
+    "category": "コンピュータ"
+  },
+  {
+    "id": 2,
+    "name": "ワイヤレスマウス",
+    "price": 3000,
+    "category": "アクセサリ"
+  },
+  {
+    "id": 3,
+    "name": "メカニカルキーボード",
+    "price": 12000,
+    "category": "アクセサリ"
+  },
+  {
+    "id": 4,
+    "name": "Webカメラ",
+    "price": 8000,
+    "category": "アクセサリ"
+  },
+  {
+    "id": 5,
+    "name": "テスト商品",
+    "price": 1000,
+    "category": "テスト"
+  },
+  {
+    "id": 6,
+    "name": "MACMAC",
+    "price": 1000000,
+    "category": "pcだよ"
+  }
+]
