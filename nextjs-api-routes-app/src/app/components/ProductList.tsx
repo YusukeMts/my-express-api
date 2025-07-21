@@ -8,7 +8,7 @@ interface ProductListProps {
  * 商品リストコンポーネント - Server Component
  * Phase 1から移植＋Server Component向けに最適化
  */
-export default function ProductList({ products }: ProductListProps) {
+const ProductList = ({ products }: ProductListProps) => {
   console.log(`📋 ProductList: ${products.length}件の商品を表示中`);
 
   if (products.length === 0) {
@@ -66,4 +66,6 @@ export default function ProductList({ products }: ProductListProps) {
       ))}
     </div>
   );
-}
+};
+
+export default ProductList;

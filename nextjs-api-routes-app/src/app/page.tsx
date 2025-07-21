@@ -6,7 +6,7 @@ import ProductForm from './components/ProductForm';
  * メインページ - Server Component
  * サーバーサイドで商品データを取得し、初期表示を高速化
  */
-export default async function ProductsPage() {
+const HomePage = async () => {
   console.log('🏠 メインページをサーバーサイドでレンダリング中...');
   
   // サーバーサイドで直接データ層にアクセス（API Routes を経由しない）
@@ -53,4 +53,6 @@ export default async function ProductsPage() {
       </div>
     </div>
   );
-}
+};
+
+export default HomePage;

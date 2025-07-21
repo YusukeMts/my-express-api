@@ -56,3 +56,38 @@
 📖 JSONファイルから6件の商品を読み込みました
 📋 ProductList: 6件の商品を表示中
  GET / 200 in 30ms
+ ✓ Compiled in 393ms (567 modules)
+ ⨯ [Error: The default export is not a React Component in "/page"]
+ ⨯ [Error: The default export is not a React Component in "/page"] {
+  page: '/'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1555ms (881 modules)
+ GET / 500 in 2706ms
+ ⨯ [Error: The default export is not a React Component in "/page"]
+ ⨯ [Error: The default export is not a React Component in "/page"] {
+  page: '/'
+}
+ GET / 500 in 727ms
+ ⨯ [Error: The default export is not a React Component in "/page"]
+ ⨯ [Error: The default export is not a React Component in "/page"] {
+  page: '/'
+}
+ GET / 500 in 714ms
+ ⨯ [Error: The default export is not a React Component in "/page"]
+ ⨯ [Error: The default export is not a React Component in "/page"] {
+  page: '/'
+}
+ GET / 500 in 711ms
+ ✓ Compiled in 282ms (895 modules)
+ ✓ Compiled in 245ms (895 modules)
+ ⚠ ./src/app/page.tsx
+Attempted import error: './components/ProductList' does not contain a default export (imported as 'ProductList').
+
+Import trace for requested module:
+./src/app/page.tsx
+ ✓ Compiled in 274ms (895 modules)
+ ✓ Compiled in 525ms (808 modules)
+ ✓ Compiled in 186ms (808 modules)
+ ✓ Compiled in 221ms (808 modules)
+ ✓ Compiled in 495ms (808 modules)

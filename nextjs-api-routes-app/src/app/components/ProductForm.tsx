@@ -9,7 +9,7 @@ import { NewProduct } from '@/lib/types';
  * 商品追加フォームコンポーネント - Client Component
  * Phase 1から移植＋App Router向けに最適化
  */
-export default function ProductForm() {
+const ProductForm = () => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -176,4 +176,6 @@ export default function ProductForm() {
       </form>
     </div>
   );
-}
+};
+
+export default ProductForm;
