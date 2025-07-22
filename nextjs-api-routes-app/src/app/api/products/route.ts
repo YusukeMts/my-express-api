@@ -6,7 +6,7 @@ import { NewProduct } from '@/lib/types';
  * GET /api/products - 全商品を取得
  * Express API の GET /products と同等の機能
  */
-export async function GET() {
+export const GET = async () => {
   try {
     console.log('🔍 GET /api/products リクエストを受信しました');
     
@@ -22,13 +22,13 @@ export async function GET() {
       { status: 500 }
     );
   }
-}
+};
 
 /**
  * POST /api/products - 新商品を作成
  * Express API の POST /products と同等の機能
  */
-export async function POST(request: NextRequest) {
+export const POST = async (request: NextRequest) => {
   try {
     console.log('➕ POST /api/products リクエストを受信しました');
     
@@ -75,4 +75,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
+};

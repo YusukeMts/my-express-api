@@ -4,15 +4,15 @@ import { readProducts, writeProducts, generateNextId } from './storage';
 /**
  * 全商品を取得
  */
-export async function getAllProducts(): Promise<Product[]> {
+export const getAllProducts = async (): Promise<Product[]> => {
   console.log('🔍 全商品を取得中...');
   return await readProducts();
-}
+};
 
 /**
  * IDで商品を取得
  */
-export async function getProductById(id: number): Promise<Product | null> {
+export const getProductById = async (id: number): Promise<Product | null> => {
   console.log(`🔍 ID ${id} の商品を検索中...`);
   const products = await readProducts();
   const product = products.find(p => p.id === id) || null;
@@ -24,12 +24,12 @@ export async function getProductById(id: number): Promise<Product | null> {
   }
   
   return product;
-}
+};
 
 /**
  * 新しい商品を作成
  */
-export async function createProduct(newProductData: NewProduct): Promise<Product> {
+export const createProduct = async (newProductData: NewProduct): Promise<Product> => {
   console.log('➕ 新商品を作成中...', newProductData);
   
   // バリデーション
@@ -56,4 +56,4 @@ export async function createProduct(newProductData: NewProduct): Promise<Product
   
   console.log(`✅ 新商品を作成しました: ${newProduct.name} (ID: ${newProduct.id})`);
   return newProduct;
-}
+};

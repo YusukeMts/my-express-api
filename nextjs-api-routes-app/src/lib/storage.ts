@@ -16,7 +16,7 @@ const INITIAL_DATA: Product[] = [
 /**
  * データディレクトリとファイルの初期化
  */
-async function ensureDataFile(): Promise<void> {
+const ensureDataFile = async (): Promise<void> => {
   try {
     // データディレクトリの作成
     const dataDir = path.dirname(DATA_FILE);
@@ -30,12 +30,12 @@ async function ensureDataFile(): Promise<void> {
     await fs.writeFile(DATA_FILE, JSON.stringify(INITIAL_DATA, null, 2), 'utf8');
     console.log('✅ 初期データファイルが作成されました');
   }
-}
+};
 
 /**
  * JSONファイルから商品データを読み込み
  */
-export async function readProducts(): Promise<Product[]> {
+export const readProducts = async (): Promise<Product[]> => {
   try {
     await ensureDataFile();
     const data = await fs.readFile(DATA_FILE, 'utf8');
@@ -46,12 +46,12 @@ export async function readProducts(): Promise<Product[]> {
     console.error('❌ 商品データの読み込みエラー:', error);
     return INITIAL_DATA;
   }
-}
+};
 
 /**
  * JSONファイルに商品データを書き込み
  */
-export async function writeProducts(products: Product[]): Promise<void> {
+export const writeProducts = async (products: Product[]): Promise<void> => {
   try {
     await ensureDataFile();
     await fs.writeFile(DATA_FILE, JSON.stringify(products, null, 2), 'utf8');
@@ -60,12 +60,12 @@ export async function writeProducts(products: Product[]): Promise<void> {
     console.error('❌ 商品データの保存エラー:', error);
     throw new Error('商品データの保存に失敗しました');
   }
-}
+};
 
 /**
  * 次のIDを生成
  */
-export function generateNextId(products: Product[]): number {
+export const generateNextId = (products: Product[]): number => {
   if (products.length === 0) return 1;
   return Math.max(...products.map(p => p.id)) + 1;
-}
+};
