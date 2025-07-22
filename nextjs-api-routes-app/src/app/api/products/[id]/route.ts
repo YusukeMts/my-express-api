@@ -5,10 +5,10 @@ import { getProductById } from '@/lib/data';
  * GET /api/products/[id] - IDで商品を取得
  * Express API の GET /products/:id と同等の機能
  */
-export async function GET(
+export const GET = async (
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
+) => {
   try {
     // Next.js 15では params は Promise
     const resolvedParams = await params;
@@ -47,4 +47,4 @@ export async function GET(
       { status: 500 }
     );
   }
-}
+};
